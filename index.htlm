@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres ser mi novia?</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0e4d7;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #ff69b4;
+            font-size: 3em;
+        }
+        button {
+            margin: 10px;
+            padding: 15px 25px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .yes {
+            background-color: #ff69b4;
+            color: #fff;
+        }
+        .no {
+            background-color: #ccc;
+            color: #fff;
+        }
+        .heart {
+            display: none;
+            font-size: 5em;
+            color: #ff69b4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>¿Quieres ser mi novia?</h1>
+        <button class="yes" onclick="showHeart()">Sí</button>
+        <button class="no" onclick="moveButton(this)">No</button>
+        <div class="heart">❤️</div>
+    </div>
+
+    <script>
+        function showHeart() {
+            document.querySelector('.heart').style.display = 'block';
+            // Aquí podrías agregar el envío del resultado a otro link.
+        }
+
+        function moveButton(button) {
+            button.style.position = 'absolute';
+            button.style.top = Math.random() * (window.innerHeight - button.clientHeight) + 'px';
+            button.style.left = Math.random() * (window.innerWidth - button.clientWidth) + 'px';
+        }
+    </script>
+</body>
+</html>
